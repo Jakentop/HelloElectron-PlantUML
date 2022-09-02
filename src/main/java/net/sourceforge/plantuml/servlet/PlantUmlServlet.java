@@ -157,8 +157,10 @@ public class PlantUmlServlet extends HttpServlet {
             encoded = DEFAULT_ENCODED_TEXT;
             e.printStackTrace();
         }
+        response.getOutputStream().write(encoded.getBytes());
+        response.getOutputStream().close();
 
-        redirectNow(request, response, encoded, idx);
+//        redirectNow(request, response, encoded, idx);
     }
 
     /**
